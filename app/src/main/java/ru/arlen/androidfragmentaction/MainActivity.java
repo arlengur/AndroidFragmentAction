@@ -18,12 +18,6 @@ public class MainActivity extends FragmentActivity implements IActivityCallbacks
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            FirstFragment firstFragment = new FirstFragment();
-            SecondFragment secondFragment = new SecondFragment();
-            getSupportFragmentManager().beginTransaction()
-                                       .add(R.id.container, firstFragment)
-                                       .add(R.id.container, secondFragment)
-                                       .commit();
             startService(newIntent(this));
         }
         mReceiver = new TextReceiver(this);
